@@ -18,7 +18,6 @@ jobs:
           command: |
             source venv/bin/activate
             cd web-blog-python8; git pull
-            python manage.py collectstatic --no-input
             sudo systemctl restart gunicorn; sudo systemctl restart nginx
           hosts: ${{ secrets.HOST }}
           privateKey: ${{ secrets.PRIVATE_KEY}}
